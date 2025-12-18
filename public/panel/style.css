@@ -1,0 +1,126 @@
+:root {
+    --sidebar-width: 260px;
+    --primary-color: #4361ee;
+    --bg-light: #f8f9fa;
+    --dark-sidebar: #111827;
+}
+
+body {
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
+
+/* استایل سایدبار */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--dark-sidebar);
+    color: white;
+    min-height: calc(100vh - 62px);
+    position: sticky;
+    top: 62px;
+}
+
+.sidebar .nav-link {
+    color: #9ca3af;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: 0.3s all;
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+    background-color: rgba(255,255,255,0.05);
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar .nav-link i {
+    margin-left: 10px;
+}
+
+/* بخش محتوا */
+.main-content {
+    padding: 30px;
+}
+
+/* کارت‌های آمار */
+.stat-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.4rem;
+}
+
+.bg-primary-soft { background-color: rgba(67, 97, 238, 0.1); }
+.bg-success-soft { background-color: rgba(16, 185, 129, 0.1); }
+
+/* پروفایل هدر */
+.admin-profile-img {
+    width: 35px;
+    height: 35px;
+    background: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.upgrade-box {
+    background: linear-gradient(45deg, #1e293b, #334155);
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+}
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle {
+  outline: 0;
+}
+

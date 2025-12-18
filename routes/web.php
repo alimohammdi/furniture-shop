@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('front/index');
+    return view('/front/index');
 });
 
-Auth::routes();
+Auth::routes(['register'=>false]);
+
+Route::get('login',function(){
+  return abort('404');
+});
+
+
+Route::middleware('auth')->prefix('dashboard/panel/')->group(function(){
+
+    Route::get('admin',function(){
+      return view('panel/layouts/master');
+    })->name('panel.dashboard');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
