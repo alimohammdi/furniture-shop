@@ -29,7 +29,7 @@ Route::get('login',function(){
 Route::middleware('auth')->prefix('dashboard/panel/')->group(function(){
 
     Route::get('admin',function(){
-      return view('panel/layouts/master');
+      return view('panel/index');
     })->name('panel.dashboard');
 });
 

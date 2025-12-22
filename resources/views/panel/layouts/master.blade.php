@@ -14,7 +14,7 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="{{ asset('front/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{  asset('panel/assets/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -34,7 +34,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
+    <link href="{{  asset('panel/headers.css') }}" rel="stylesheet">
   </head>
   <body>
 
@@ -62,65 +62,32 @@
   </symbol>
 </svg>
 
+<main>
+  <h1 class="visually-hidden">Headers examples</h1>
 
-  <header>
-    <div class="px-3 py-2 bg-dark text-white">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-          </a>
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#"/></svg>
+        <span class="fs-4">ایران چوب</span>
+      </a>
 
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="#" class="nav-link text-secondary">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"/></svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href='' class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                Customers
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class='nav-link active' aria-current="page">داشبورد</a></li>لهف
+        <li class="nav-item"><a href="#" class="nav-link">محصولات </a></li>
+        <li class="nav-item"><a href="#" class="nav-link">دسته بندی </a></li>
+        <li class="nav-item"><a href="#" class="nav-link">اطلاعات </a></li>
+        <li class="nav-item"><a href="#" class="nav-link">درباره ما</a></li>
+      </ul>
+    </header>
+  </div>
 
-        <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2">Login</button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
-        </div>
-      </div>
-    </div>
-  </header>
+@yield('content')
+</main>
 
-</body>
-    <script src=" {{  asset('panel/style.css') }}"></script>
-</body>
+
+    <script src="{{  asset('panel/assets/dist/js/bootstrap.bundle.min.js') }}"></script>
+
+
+  </body>
 </html>
