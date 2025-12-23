@@ -63,7 +63,7 @@
 </svg>
 
 <main>
-  <h1 class="visually-hidden">Headers examples</h1>
+ 
 
   <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -73,7 +73,7 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class='nav-link active' aria-current="page">داشبورد</a></li>لهف
+        <li class="nav-item"><a href="#" class='nav-link active' aria-current="page">داشبورد</a></li>
         <li class="nav-item"><a href="#" class="nav-link">محصولات </a></li>
         <li class="nav-item"><a href="#" class="nav-link">دسته بندی </a></li>
         <li class="nav-item"><a href="#" class="nav-link">اطلاعات </a></li>

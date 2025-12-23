@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SeoController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,10 @@ Route::middleware('auth')->prefix('dashboard/panel/')->group(function(){
     Route::get('admin',function(){
       return view('panel/index');
     })->name('panel.dashboard');
+
+    Route::resource('/seo',SeoController::class);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 

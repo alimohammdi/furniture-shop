@@ -123,4 +123,42 @@ body {
 .dropdown-toggle {
   outline: 0;
 }
+/* تنظیم فونت و رنگ پس‌زمینه کل صفحه */
+body {
+    background: #f0f2f5;
+    font-family: 'Tahoma', sans-serif;
+    color: #333;
+}
 
+/* استایل اختصاصی برای کارت فرم */
+.form-card {
+    width: 100%;
+    max-width: 450px;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+}
+
+/* استایل دکمه سفارشی */
+.custom-btn {
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #0d6efd;
+    transition: 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #0a58ca;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+}
+
+/* تغییر رنگ فیلدها هنگام فوکوس */
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
