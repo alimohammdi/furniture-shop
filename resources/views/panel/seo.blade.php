@@ -3,44 +3,63 @@
 @section('content')
 
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
-    <div class="card form-card shadow col-8 offset-2 mt-4 bg-dark text-white">
-        <div class="card-body  ">
-            <h3 class="card-title text-center mb-4"> SEO مدیریت  </h3>
+    <div class="card form-card shadow col-8 offset-2 mt-2 bg-dark text-white ">
+        <div class="card-body ">
+            <h3 class="card-title text-center mb-2"> SEO نمایش  </h3>
+
+             @if (session('delete-seo'))
+                 <section class="alert alert-danger p-3">
+                    <h4 class="text-center"> {{  session('delete-seo') }}</h4>
+                 </section>
+             @endif
+             @if (session('create-seo'))
+                 <section class="alert alert-success p-3">
+                    <h4 class="text-center"> {{  session('create-seo') }}</h4>
+                 </section>
+             @endif
 
 
+            <table class="table table-dark">
+            <thead>
+                <tr>
 
-            {!! Form::open(['route'=>'seo.store','method'=>'post']) !!}
-
-
-                <section class="d-block">
-                     {!! Form::label('title','title') !!}
-                     {!! Form::text('title',old('title'), ['class'=>'form-control']) !!}
-                </section>
-
-                 <section class="mt-3 d-block">
-                     {!! Form::label('author','author') !!}
-                     {!! Form::text('author',old('author'), ['class'=>'form-control']) !!}
-                </section>
+                <th scope="col">title</th>
+                <th scope="col">author</th>
+                <th scope="col">keywords</th>
+                <th scope="col">description</th>
+                <th scope="col">description</th>
 
 
-                 <section class="mt-3 d-block">
-                     {!! Form::label('keywords','keywords') !!}
-                     {!! Form::textarea('keywords',old('keywords'), ['class'=>'form-control','style'=>'hight:50px']) !!}
-                </section>
+                </tr>
 
+            </thead>
 
-                 <section class="mt-3 d-block">
-                     {!! Form::label('description','description') !!}
-                     {!! Form::textarea('description',old('description'),  ['class'=>'form-control','style'=>'resize:none;hight:50px']) !!}
-                </section>
+            @forelse ($seo as $item)
+                 <tbody>
+                <tr>
 
+                <td>{{  $item->title }}</td>
+                <td>{{  $item->author }}</td>
+                <td>{{  $item->keywords }}</td>
+                <td>{{  $item->description }}</td>
+                <td>
+                 
+                 {!! Form::open(['route'=>['seo.destroy','id'=>$item->id],'method'=>'delete']) !!}
+                 {!! Form::submit('حذف', ['class'=>'btn btn-danger']) !!}
+                 {!! Form::close() !!}
 
-                  <section class="mt-2  d-block">
+                </td>
+                </tr>
+            </tbody>
+            @empty
 
-                     {!! Form::submit('ثبت ',['class'=>'btn btn-success form-control']) !!}
-                </section>
+            @endforelse
 
-            {!! Form::close() !!}
+            </table>
+
+            <a href="{{  route('seo.create')}}"  >
+                    <button class="btn btn-primary  form-control"> Seo افزودن  </button>
+                 </a>
 
         </div>
     </div>

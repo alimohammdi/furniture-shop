@@ -33,7 +33,7 @@ Route::middleware('auth')->prefix('dashboard/panel/')->group(function(){
       return view('panel/index');
     })->name('panel.dashboard');
 
-    Route::resource('/seo',SeoController::class);
+    Route::resource('/seo',SeoController::class)->parameters(['seo'=>'id']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
