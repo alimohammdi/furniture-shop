@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SeoController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,13 @@ Route::middleware('auth')->prefix('dashboard/panel/')->group(function(){
     })->name('panel.dashboard');
 
     Route::resource('/seo',SeoController::class)->parameters(['seo'=>'id']);
+
+    //crud slider
+
+    Route::resource('slider',SliderController::class)->parameters(['slider'=>'id']);
+
+
+    //end crud slider
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
