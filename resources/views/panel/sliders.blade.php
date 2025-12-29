@@ -17,6 +17,11 @@
                     <h4 class="text-center"> {{  session('delete_slider') }}</h4>
                  </section>
              @endif
+              @if (session('update_slider'))
+                 <section class="alert alert-danger p-3">
+                    <h4 class="text-center"> {{  session('update_slider') }}</h4>
+                 </section>
+             @endif
 
 
 
@@ -59,11 +64,11 @@
 
                 </td>
                 <td>
-                    {!! Form::open(['route'=>['slider.edit','id'=>$slide->id],'method'=>'get']) !!}
+                {!! Form::open(['route'=>['slider.edit','id'=>$slide->id],'method'=>'get']) !!}
 
                 {!! Form::submit('ویرایش', ['class'=>'btn btn-warning']) !!}
 
-             {!! Form::close() !!}
+                {!! Form::close() !!}
 
                 </td>
 

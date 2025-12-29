@@ -62,9 +62,27 @@ class SliderController extends Controller
 
     public function update(updateSliderRequest $request, $id)
     {
-
-        
+        $file = $request->file('image');
+        $last_image = Slider::findOrFail($id)->image;
+        $image = "";
+        if(!empty($file)){
+            if(file_exists('images/slider/'.$last_image)){
+                unlink('images/slider/'.$last_image);
+            }
+            $image = md5(time()).'.'.$file->getClientOriginalExtension();
+            $file->move('images/slider',$image);
+    }else{
+        $image = $last_image;
     }
+    Slider::findOrFail($id)->update([
+        'title' =>$request->title ,
+        'header' => $request->header ,
+        'description' => $request->description,
+        'image' => $image
+    ]);
+    session()->flash('update_slider','ویرایش انجام شد ');
+    return redirect()->route('slider.index');
+}
 
 
     public function destroy($id)

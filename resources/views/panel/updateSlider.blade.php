@@ -8,8 +8,8 @@
             <h3 class="card-title text-center mb-4">  بنر ویرایش  </h3>
 
 
-            {!! Form::model($slider,['route'=>['slider.update','id'=>$slider->id,'method'=>'put'],'files'=>true]) !!}
 
+            {!! Form::model($slider,['route'=>['slider.update','id'=>$slider->id],'method'=>'put','files'=>true]) !!}
 
              <section class="d-block">
                      {!! Form::label('header','header') !!}
